@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Car Price Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Car Price Predictor</div>
+        <form action="/" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="car_name">Car Name</label>
+                    <input class="input" type="text" name="car_name" placeholder="Enter the car name" required>
+                </div>
+                <div class="inputfield">
+                    <label for="year">Year</label>
+                    <input class="input" type="text" name="year" required>
+                </div>
+                <div class="inputfield">
+                    <label for="km">Kilometers Driven</label>
+                    <input class="input" type="text" name="km" required>
+                </div>
+                <div class="inputfield">
+                    <label for="seller_type">Seller Type</label>
+                    <div class="custom_select">
+                        <select name="seller_type" id="seller_type">
+                            <option value="" selected hidden>Select</option>
+                            <option value="individual">Individual</option>
+                            <option value="dealer">Dealer</option>
+                            <option value="trust">Trustmark Dealer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="transmission">Transmission</label>
+                    <div class="custom_select">
+                        <select name="transmission" id="transmission">
+                            <option value="" selected hidden>Select</option>
+                            <option value="manual">Manual</option>
+                            <option value="automatic">Automatic</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="owner">Owner</label>
+                    <div class="custom_select">
+                        <select name="owner" id="owner">
+                            <option value="" selected hidden>Select</option>
+                            <option value="first">First</option>
+                            <option value="second">Second</option>
+                            <option value="third">Third</option>
+                            <option value="fourth">Fourth and above</option>
+                            <option value="test">Test drive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="fuel">Fuel</label>
+                    <div class="custom_select">
+                        <select name="fuel" id="fuel">
+                            <option value="" selected hidden>Select</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="petrol">Petrol</option>
+                            <option value="cng">CNG</option>
+                            <option value="lpg">LPG</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="mileage">Mileage (Km/L)</label>
+                    <input class="input" type="text" name="mileage" required>
+                </div>
+                <div class="inputfield">
+                    <label for="engine">Engine (in CC)</label>
+                    <input class="input" type="text" name="engine" required>
+                </div>
+                <div class="inputfield">
+                    <label for="max_power">Max Power (in bhp)</label>
+                    <input class="input" type="text" name="max_power" required>
+                </div>
+                <div class="inputfield">
+                    <label for="seats">Number of Seats</label>
+                    <input class="Number" type="number" name="seats" required>
+                </div>
+                
+                <div class="inputfield">
+                    <input class="btn" type="submit" value="Predict Price">
+                </div>
+            </div>
+        </form>
+
+        <div class="result">
+            {% if pred_value != 0 %}
+            <p>Estimated Price : LKR {{pred_value}}</p>
+            {% endif %}
+        </div>
+    <p>{{pred_value}}</p>
+    </div>
+</body>
+</html>

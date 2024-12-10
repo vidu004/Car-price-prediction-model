@@ -1,0 +1,174 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Wrapper for the form and result */
+.wrapper {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form elements */
+.form {
+    margin-bottom: 30px;
+}
+
+.inputfield {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.inputfield label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.inputfield input, .inputfield select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.custom_select {
+    position: relative;
+}
+
+.custom_select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    padding-right: 30px;
+}
+
+.inputfield select {
+    padding-left: 10px;
+}
+
+/* Button */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Result section */
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Custom styling for Number input */
+.Number {
+    appearance: textfield; /* Standard property for compatibility */
+    -moz-appearance: textfield; /* Firefox */
+    -webkit-appearance: none; /* WebKit browsers (Chrome, Safari) */
+    width: 100%;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Styling for checkboxes */
+.check {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.check div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.check input[type="checkbox"] {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive Styles */
+
+/* Small screens (tablets and large phones) */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90%; /* Reduce width for smaller screens */
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 20px; /* Adjust title size */
+    }
+
+    .btn {
+        font-size: 14px; /* Adjust button font size */
+        padding: 10px;
+    }
+}
+
+/* Extra small screens (small phones) */
+@media (max-width: 480px) {
+    .wrapper {
+        width: 100%; /* Full width for very small screens */
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .inputfield label, 
+    .check div {
+        font-size: 12px; /* Smaller font for labels */
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .check input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+}
